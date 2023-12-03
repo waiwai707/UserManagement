@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <table>
+        <th>User Name</th>
+        <th>Password</th>
+        <th>Date Of Birth</th>
+        <th>E-mail</th>
+        <th>Phone Number</th>
+        <th>User Type</th>
+        <th>Status</th>
+        <tbody>
+            {% for i in userdata %}
+            <tr>
+                <td>{{i.user_name}}</td>
+                <td>{{i.password}}</td>
+                <td>{{i.dob}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.phone_number}}</td>
+                <td>{{i.user_type}}</td>
+                <td>{{i.status}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
