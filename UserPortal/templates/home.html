@@ -10,6 +10,9 @@
 </head>
 
 <body>
+    <div class="add_data">
+        <a href="{% url 'sign_up' %}">add +</a>
+    </div>
     <table>
         <th>User Name</th>
         <th>Password</th>
@@ -18,6 +21,7 @@
         <th>Phone Number</th>
         <th>User Type</th>
         <th>Status</th>
+        <th>Action</th>
         <tbody>
             {% for i in userdata %}
             <tr>
@@ -28,6 +32,10 @@
                 <td>{{i.phone_number}}</td>
                 <td>{{i.user_type}}</td>
                 <td>{{i.status}}</td>
+                <td>
+                    <a href="{% url 'update' i.id %}">Edit</a>
+                    <a href="{% url 'delete' i.id %}">Delete</a>
+                </td>
             </tr>
             {% endfor %}
         </tbody>
